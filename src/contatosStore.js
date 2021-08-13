@@ -8,7 +8,6 @@ export function generateId() {
 	return id;
 };
 
-
 export let operadoras = writable([
 	{
 		"id": "41",
@@ -59,3 +58,5 @@ export let contatos = writable([
 		"data": new Date()	
 	}
 ]);
+
+
