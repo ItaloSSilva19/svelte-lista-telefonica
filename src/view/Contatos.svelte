@@ -2,6 +2,7 @@
 	import { contatos, generateId, operadoras } from '../contatosStore.js';
 	let novoContato = {"id": generateId()};
 	let selected;
+	let contatosSelecionados = [];
 	
 	function addContato() {
 		novoContato.operadora = selected;
@@ -9,6 +10,12 @@
 		novoContato = {"id": generateId()};
 		selected;
 	};
+	
+	function excluirContato() {
+		$contatos = $contatos.filter(contato => !contatosSelecionados.includes(contato));
+		contatosSelecionados = [];
+	};
+	
 </script>
 
 <div class="
@@ -17,11 +24,10 @@ shadow rounded bg-light bg-gradient text-dark
 p-3 mb-2 w-50 h-auto "
 >
 	<input class="form-control" type="text" placeholder="Pesquisar">
-	<div class="table-responsive">
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>#</th>
+					<th></th>
 					<th>Código Cliente</th>
 					<th>Nome</th>
 					<th>Telefone</th>
@@ -46,7 +52,7 @@ p-3 mb-2 w-50 h-auto "
 				</tr>
 				{#each $contatos as contato(contato.id)}
 				<tr>
-					<td></td>
+					<td><input type="checkbox" bind:group={contatosSelecionados} value={contato} ></td>
 					<td>{contato.id}</td>
 					<td>{contato.nome}</td>				
 					<td>{contato.telefone}</td>				
@@ -56,9 +62,12 @@ p-3 mb-2 w-50 h-auto "
 				{/each}
 			</tbody>
 		</table>
-	</div>
 	<div class="d-grid gap-2">
-  <button class="btn btn-primary" type="button" on:click="{()=> {addContato()}}" >Criar Contato</button>
+	{#if contatosSelecionados.length > 0}
+		<button class="btn btn-danger" type="button" on:click="{()=> {excluirContato()}}" >Excluir Contato</button>
+	{:else}
+		<button class="btn btn-primary" type="button" on:click="{()=> {addContato()}}" >Criar Contato</button>
+	{/if}
 	</div>
 </div>
 
