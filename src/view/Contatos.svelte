@@ -50,7 +50,7 @@ p-3 mb-2 w-50 h-auto "
 						{/each}
 						</select>
 					</td>
-					<td><input bind:value={novoContato.data} class="form-control" type="text" placeholder="Data"></td>
+					<td><input bind:value={novoContato.data} class="form-control" type="date" placeholder="Data"></td>
 				</tr>
 				{#each $contatos as contato(contato.id)}
 				<tr>

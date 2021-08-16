@@ -8,6 +8,14 @@ export function generateId() {
 	return id;
 };
 
+function getDate() {
+	let date = new Date();
+	const month = date.getMonth();
+	const day = date.getDate();
+	const year = date.getFullYear();
+	return year + "-" + month + "-" + day;
+};
+
 export let operadoras = writable([
 	{
 		"id": "41",
@@ -41,21 +49,21 @@ export let contatos = writable([
 		"nome": "João Joanilto da                      Joanildis",
 		"telefone": "1111-1111",
 		"operadora": {"id": "15", "nome":"claro", "preco":"1", "tipo":"Fixo"},
-		"data": new Date()	
+		"data": getDate()	
 	},
 	{
 		"id": generateId(),
 		"nome": "MARIA Mariana Marinilde",
 		"telefone": "2222-1111",
 		"operadora": {"id": "37",	"nome":"GVT	", "preco":"3", "tipo":"fixo"},
-		"data": new Date()	
+		"data": getDate()	
 	},
 	{
 		"id": generateId(),
 		"nome": "Tereza Terezinha terezópolis",
 		"telefone": "2333-1111",
 		"operadora": {"id": "41",	"nome":"Tim",	"preco":"2", "tipo":"móvel"},
-		"data": new Date()	
+		"data": getDate()	
 	}
 ]);
 
