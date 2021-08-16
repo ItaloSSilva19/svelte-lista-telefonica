@@ -38,22 +38,22 @@ export let operadoras = writable([
 export let contatos = writable([
 	{
 		"id": generateId(),
-		"nome": "João Joanilto Joanildis",
+		"nome": "João Joanilto da                      Joanildis",
 		"telefone": "1111-1111",
 		"operadora": {"id": "15", "nome":"claro", "preco":"1", "tipo":"Fixo"},
 		"data": new Date()	
 	},
 	{
 		"id": generateId(),
-		"nome": "Maria Mariana Marinilde",
+		"nome": "MARIA Mariana Marinilde",
 		"telefone": "2222-1111",
 		"operadora": {"id": "37",	"nome":"GVT	", "preco":"3", "tipo":"fixo"},
 		"data": new Date()	
 	},
 	{
 		"id": generateId(),
-		"nome": "Tereza Terezinha Terezópolis",
-		"telefone": "333-1111",
+		"nome": "Tereza Terezinha terezópolis",
+		"telefone": "2333-1111",
 		"operadora": {"id": "41",	"nome":"Tim",	"preco":"2", "tipo":"móvel"},
 		"data": new Date()	
 	}

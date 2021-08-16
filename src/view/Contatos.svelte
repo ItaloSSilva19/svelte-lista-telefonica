@@ -1,5 +1,7 @@
 <script>
 	import { contatos, generateId, operadoras } from '../contatosStore.js';
+	import { nameValidate, phoneValidate } from '../validation/inputValidation.js';
+	
 	let novoContato = {"id": generateId()};
 	let selected;
 	let contatosSelecionados = [];
@@ -54,9 +56,9 @@ p-3 mb-2 w-50 h-auto "
 				<tr>
 					<td><input type="checkbox" bind:group={contatosSelecionados} value={contato} ></td>
 					<td>{contato.id}</td>
-					<td>{contato.nome}</td>				
-					<td>{contato.telefone}</td>				
-					<td>{contato.operadora.nome}</td>				
+					<td>{nameValidate(contato.nome)}</td>				
+					<td>{phoneValidate(contato.telefone)}</td>				
+					<td>{nameValidate(contato.operadora.nome)}</td>				
 					<td>{contato.data}</td>				
 				</tr>
 				{/each}
